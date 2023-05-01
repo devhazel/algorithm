@@ -9,9 +9,9 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int bytes = scanner.nextInt()/4;
         while(bytes --> 0) {
-            bw.append("long ");
+            bw.write("long ");
         }
-        bw.append("int");
+        bw.write("int");
         bw.flush();
     }
 }
