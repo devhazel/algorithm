@@ -1,20 +1,17 @@
 class Solution {
     public String solution(String s, int n) {
-        char[] strArr = s.toCharArray();
         StringBuilder sb = new StringBuilder();
-        for(char c : strArr) {
-            if(c == ' ') {
-                sb.append(c);
-                continue;
-            }
-            if(c <= 'Z') {
-                // 대문자
-                sb.append((char) ((c-'A'+n)%26+'A'));
-            } else {
-                // 소문자
-                sb.append((char) ((c-'a'+n)%26+'a'));
-            }
+        for(char c : s.toCharArray()) {
+            sb.append(pushAlphabet(c, n));
         }
         return sb.toString();
+    }
+
+    private char pushAlphabet(char c, int n) {
+        if(!Character.isAlphabetic(c)) {
+            return c;
+        }
+        int offset = Character.isUpperCase(c) ? 'A' : 'a';
+        return (char) ((c-offset+n)%26+offset);
     }
 }
