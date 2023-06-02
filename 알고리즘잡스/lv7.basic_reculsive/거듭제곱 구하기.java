@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+// n^m을 재귀함수를 이용하여 계산하시오.
 public class Main{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
